@@ -3,6 +3,7 @@ import List from "./Models/List.js";
 let _state = {
   /** @type {List[]} */
   lists: [],
+  chores: [],
 };
 
 //NOTE You should not need to change the code from this point down
@@ -18,6 +19,14 @@ function _loadState() {
 _loadState();
 
 class Store {
+  deleteChore(choreId) {
+    let indextoRemove2 = _state.chores.findIndex(chore => chore.id == choreId)
+    _state.chores.splice(indextoRemove2, 1)
+  }
+  deleteList(listId) {
+    let indextoRemove = _state.lists.findIndex(list => list.id == listId)
+    _state.lists.splice(indextoRemove, 1)
+  }
   addChore(foundChoreIndex, choreData) {
     _state.lists[foundChoreIndex].chores.push(choreData)
   }

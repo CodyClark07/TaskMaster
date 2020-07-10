@@ -17,12 +17,18 @@ class ListService {
   addChore(choreData, listId) {
     let foundChoreIndex = _store.State.lists.findIndex(list => list.id == listId)
     if (foundChoreIndex < 0) {
-      console.log("this is not the list youre looking for")
+      console.log("no chore ")
       return
     }
 
     _store.addChore(foundChoreIndex, choreData)
     _store.saveState()
+  }
+  deleteList(listId) {
+    _store.deleteList(listId)
+  }
+  deleteChore(choreId) {
+    _store.deleteChore(choreId)
   }
 }
 

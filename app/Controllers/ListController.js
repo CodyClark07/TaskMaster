@@ -31,12 +31,20 @@ export default class ListController {
   addChore(event, listId) {
     event.preventDefault();
     let formData = event.target
-    let choreData = {
-      name: formData.choreName.value
-    }
+    let choreData = formData.choreName.value
+
     _listService.addChore(choreData, listId)
     formData.reset()
-    _drawLists
+    _drawLists()
 
+  }
+  deleteList(listId) {
+
+    _listService.deleteList(listId)
+    _drawLists()
+  }
+  deleteChore(choreId) {
+    _listService.deleteChore(choreId)
+    _drawLists()
   }
 }
