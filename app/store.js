@@ -2,7 +2,7 @@ import List from "./Models/List.js";
 
 let _state = {
   /** @type {List[]} */
-  lists: []
+  lists: [],
 };
 
 //NOTE You should not need to change the code from this point down
@@ -18,6 +18,13 @@ function _loadState() {
 _loadState();
 
 class Store {
+  addChore(foundChoreIndex, choreData) {
+    _state.lists[foundChoreIndex].chores.push(choreData)
+  }
+  addList(newList) {
+    _state.lists.push(newList)
+  }
+
   /**
    * Provides access to application state data
    */

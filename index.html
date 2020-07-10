@@ -18,27 +18,19 @@
   <main>
     <div class="row container-fluid justify-content-center">
       <div class="col-5">
-        <form onsubmit="">
+        <form onsubmit="app.listController.addList(event)">
           <div class="form-group">
-            <label for="taskName"> Task Name</label>
-            <input type="text" name="taskName" id="" class="form-control" placeholder="Enter Task Here...">
+            <label for="listName"> Task Name</label>
+            <input type="text" name="listName" id="" class="form-control" placeholder="Enter Task Here...">
           </div>
           <button type="submit" class="btn btn-primary">Add Task</button>
         </form>
       </div>
     </div>
 
-    <!-- <div class="row container-fluid justify-content-center">
-      <div class="col-5">
-        <form onsubmit="">
-          <div class="form-group">
-            <label for="choreName"> Chore Name</label>
-            <input type="text" name="choreName" id="" class="form-control" placeholder="Enter Chore Here...">
-          </div>
-          <button type="submit" class="btn btn-primary">Add Chore</button>
-        </form>
-      </div>
-    </div> -->
+    <div id="chores" class="row container-fluid justify-content-center">
+
+    </div>
 
 
 
