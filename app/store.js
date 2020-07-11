@@ -19,9 +19,9 @@ function _loadState() {
 _loadState();
 
 class Store {
-  deleteChore(choreId) {
-    let indextoRemove2 = _state.chores.findIndex(chore => chore.id == choreId)
-    _state.chores.splice(indextoRemove2, 1)
+  deleteChore(listId, index) {
+    let indextoRemove2 = _state.lists.findIndex(list => list.id == listId)
+    _state.lists[indextoRemove2].chores.splice(index, 1)
   }
   deleteList(listId) {
     let indextoRemove = _state.lists.findIndex(list => list.id == listId)

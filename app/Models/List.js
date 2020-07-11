@@ -12,7 +12,7 @@ export default class List {
   get Template() {
 
     let template = `
-    <div class="col-5 border mt-4 shadow">
+    <div class="col-5 border mt-4 shadow bg-card">
     <h1> ${this.name}</h1>
         <form onsubmit="app.listController.addChore(event, '${this.id}')">
           <div class="form-group">
@@ -23,7 +23,7 @@ export default class List {
           </form>
           <button class="btn btn-danger" onclick="app.listController.deleteList('${this.id}')">Delete Task</button>
     `
-    this.chores.forEach(chore => template += `<p>${chore}<i class="fa fa-trash-o fa-2x" onclick="deleteChore('${this.id}')"></i></p>`)
+    this.chores.forEach(chore => template += `<p>${chore}<i class="fa fa-trash-o fa-2x" onclick="app.listController.deleteChore('${this.id}')"></i></p>`)
 
     template += '</div>'
 

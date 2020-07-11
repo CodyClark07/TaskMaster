@@ -1,0 +1,9 @@
+.bg-dam{
+    background-image: url(ThompsonFalls.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-card{
+    background-color: rgba(127, 255, 212, 0.616);
+}

@@ -27,8 +27,8 @@ class ListService {
   deleteList(listId) {
     _store.deleteList(listId)
   }
-  deleteChore(choreId) {
-    _store.deleteChore(choreId)
+  deleteChore(listId, index) {
+    _store.deleteChore(listId, index)
   }
 }
 
