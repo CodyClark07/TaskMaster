@@ -12,18 +12,18 @@ export default class List {
   get Template() {
 
     let template = `
-    <div class="col-5 border mt-4 shadow bg-card">
-    <h1> ${this.name}</h1>
+    <div class="col-4 border mt-4 shadow bg-card text-center">
+    <h3><u> ${this.name}</u></h3>
         <form onsubmit="app.listController.addChore(event, '${this.id}')">
           <div class="form-group">
-            <label for="choreName"> Chore Name</label>
+            <label for="choreName"></label>
             <input type="text" name="choreName" id="" class="form-control" placeholder="Enter Chore Here...">
           </div>
-          <button type="submit" class="btn btn-primary">Add Chore</button>
+          <button type="submit" class="btn btn-primary mb-2">Add Chore</button>
           </form>
-          <button class="btn btn-danger" onclick="app.listController.deleteList('${this.id}')">Delete Task</button>
+          <button class="btn btn-outline-danger mb-2" onclick="app.listController.deleteList('${this.id}')">Delete Task</button>
     `
-    this.chores.forEach(chore => template += `<p>${chore}<i class="fa fa-trash-o fa-2x" onclick="app.listController.deleteChore('${this.id}')"></i></p>`)
+    this.chores.forEach(chore => template += `<p id="chore" class="">${chore}<i class="fa fa-trash-o fa-2x text-danger" onclick="app.listController.deleteChore('${this.id}')"></i><i class="fa fa-check-circle fa-2x fa-check text-dark" onclick="app.listController.changeText('${this.id}')"></i></p>`)
 
     template += '</div>'
 

@@ -5,5 +5,14 @@
 }
 
 .bg-card{
-    background-color: rgba(127, 255, 212, 0.616);
+    background-color: #7fffd4b4;
+}
+
+.complete{
+    color: chartreuse !important;
+    text-decoration: line-through;
+}
+
+.fa-check:hover{
+    color: chartreuse !important;
 }

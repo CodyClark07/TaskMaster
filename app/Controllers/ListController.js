@@ -47,4 +47,10 @@ export default class ListController {
     _listService.deleteChore(listId, index)
     _drawLists()
   }
+
+  changeText() {
+    document.getElementById("chore").classList.add("complete")
+
+  }
+
 }
