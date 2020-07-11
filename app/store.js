@@ -1,5 +1,6 @@
 import List from "./Models/List.js";
 
+
 let _state = {
   /** @type {List[]} */
   lists: [],
@@ -22,11 +23,17 @@ _loadState();
 class Store {
   deleteChore(listId, index) {
     let indextoRemove2 = _state.lists.findIndex(list => list.id == listId)
-    _state.lists[indextoRemove2].chores.splice(index, 1)
+    if (window.confirm("Do you really want to delete your chore?")) {
+      _state.lists[indextoRemove2].chores.splice(index, 1)
+
+    }
   }
   deleteList(listId) {
     let indextoRemove = _state.lists.findIndex(list => list.id == listId)
-    _state.lists.splice(indextoRemove, 1)
+    if (window.confirm("Do you really want to delete your Task?")) {
+      _state.lists.splice(indextoRemove, 1)
+
+    }
   }
   addChore(foundChoreIndex, choreData) {
     _state.lists[foundChoreIndex].chores.push(choreData)
