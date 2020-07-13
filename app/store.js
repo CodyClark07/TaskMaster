@@ -21,6 +21,13 @@ function _loadState() {
 _loadState();
 
 class Store {
+
+  changeText(listId, index) {
+    //  _state.lists.findIndex(list => list.id == listId)
+    // let completeId = _state.lists[indextoRemove2].chores[index]
+
+    document.getElementById(`'${listId}-${index}'`).classList.add("complete")
+  }
   deleteChore(listId, index) {
     let indextoRemove2 = _state.lists.findIndex(list => list.id == listId)
     if (window.confirm("Do you really want to delete your chore?")) {
@@ -49,7 +56,7 @@ class Store {
     return _state;
   }
 
-  //NOTE call saveState everytime you change the state in any way
+  //NOTE call saveState every time you change the state in any way
   saveState() {
     localStorage.setItem("TaskMaster", JSON.stringify(_state));
   }

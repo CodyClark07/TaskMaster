@@ -48,9 +48,10 @@ export default class ListController {
     _drawLists()
   }
 
-  changeText() {
-    document.getElementById("chore").classList.add("complete")
+  changeText(listId, index) {
+    _listService.changeText(listId, index)
+    _drawLists
+
 
   }
-
 }

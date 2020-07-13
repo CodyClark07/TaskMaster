@@ -32,6 +32,10 @@ class ListService {
     _store.deleteChore(listId, index)
     _store.saveState()
   }
+  changeText(listId, index) {
+    _store.changeText(listId, index)
+    _store.saveState
+  }
 }
 
 const SERVICE = new ListService();
